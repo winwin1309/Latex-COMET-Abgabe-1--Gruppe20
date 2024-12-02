@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{lipsum}  % Nur zum Erzeugen von Beispieltext
-
+\usepackage{hyperref}
 \begin{document}
 
 % Titelseite
@@ -143,35 +143,32 @@ Im Folgenden ist der Prozess der Umrechnung von Fahrenheit in Grad Celsius abgeb
 \paragraph{Erste Normalform (1NF):}
 Die Erste Normalform verlangt, dass alle Attribute atomar sind und jede Zeile durch einen eindeutigen Primärschlüssel identifiziert wird.
 
-\begin{verbatim}
-Date        Station                Count  Precipitation  Windspeed  MinTemp   
-01.01.2023  Adelphi St & Myrtle Ave 48     0              10.07      42       
-average_temperature      max_temperature                
-50                       56
-\end{verbatim}
+
+% Bild nach der ersten Normalform
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{20241202_01150744.png}  % Ersetzen Sie 'bild1.png' durch Ihren tatsächlichen Bildnamen
+\caption{Beispiel zur ersten Normalform (1NF).}
+\label{fig:bild1}
+\end{figure}
 
 \paragraph{Zweite Normalform (2NF):}
 Die Zweite Normalform stellt sicher, dass alle Nicht-Schlüssel-Attribute vollständig vom gesamten Primärschlüssel abhängen und keine partiellen Abhängigkeiten existieren.
 
-\begin{itemize}
-    \item \textbf{Station (Primärschlüssel: station\_id):}
-    \texttt{
-    station\_id   station\_name
-    }
-    \item \textbf{Wetterdaten (Primärschlüssel: weather\_id):}
-    \texttt{
-    weather\_id   station\_id   date   precipitation   windspeed   min\_temperature \\
-    avg\_temperature   max\_temperature
-    }
-    \item \textbf{Fahrradverleih (Primärschlüssel: rental\_id):}
-    \texttt{
-    rental\_id   station\_id   date   count
-    }
-\end{itemize}
+% Abbildung nach der zweiten Normalform
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{20241202_01151045.png}  % Ersetzen Sie 'bild2.png' durch Ihren tatsächlichen Bildnamen
+\caption{Beispiel zur zweiten Normalform (2NF).}
+\label{fig:bild2}
+\end{figure}
+
+% Optionaler Seitenumbruch, damit der Text nicht über das Bild rutscht
+\newpage
+
 
 
 \subsubsection{Implementierung des Datenbankschemas in SQL}
-
 % Drei Bilder untereinander
 \begin{figure}[h!]
 \centering
@@ -223,6 +220,13 @@ Overleaf. \textit{Overleaf - Online LaTeX Editor}, \url{https://www.overleaf.com
 SQLite. \textit{SQLite Online}, \url{https://sqliteonline.com/}.
 \end{thebibliography}
 
+\section*{Abgabe des LaTeX-Codes}
 
+Der für diese Abgabe zu erstellende LaTeX-Code wurde in einem GitHub-Repository zur Verfügung gestellt. Sie können den Commit des LaTeX-Codes über den folgenden Link aufrufen:
+
+\href{https://github.com/winwin1309/Latex-COMET-Abgabe-1--Gruppe20/commit/c46b79784c59612828f0b85de1aa45dbfaeb9dc6}
+{GitHub Commit Link}
+
+Bitte klicken Sie auf den Link, um den spezifischen Commit des LaTeX-Codes zu sehen.
 
 \end{document}
